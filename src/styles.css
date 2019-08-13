@@ -1,0 +1,116 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  background: linear-gradient(to right, skyblue -50%, purple 150%);
+  margin-top: 20px;
+}
+
+.query {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.lazzyLoad {
+  color: transparent;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: default;
+}
+
+.gallery {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 40px;
+}
+
+.photo__item {
+  list-style: none;
+  width: 360px;
+  margin: 10px;
+}
+
+.photo__item img {
+  display: block;
+  max-width: 360px;
+  height: 220px;
+  object-fit: cover;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  max-width: 360px;
+  height: 100%;
+  font-size: 10px;
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms linear;
+}
+
+.spinner {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  height: 100vh;
+  width: 100vw;
+  background-color: teal;
+}
+
+.spinner.isActive {
+  display: block;
+}
+
+.sk-circle {
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sk-circle .sk-child {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.sk-circle .sk-child:before {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 15%;
+  height: 15%;
+  background-color: #fff;
+  border-radius: 100%;
+  -webkit-animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
+  animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
+}
+
